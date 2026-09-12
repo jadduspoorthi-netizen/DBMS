@@ -1,48 +1,98 @@
-# Smart Hub Research
+# SmartResearch Hub
+
+## AI-Powered Semantic Knowledge Repository
+
+SmartResearch Hub is an AI-powered semantic research repository designed to help students, researchers, faculty members, and academic institutions discover and manage relevant research papers more efficiently.
+
+The system aims to retrieve research papers based on the semantic meaning of a user's query rather than relying only on exact keyword matching.
+
+---
 
 ## Project Description
 
-Smart Hub Research is a semantic search system designed to help researchers, students, teachers, lecturers, and other users find relevant research papers and text more efficiently.
+The rapid growth of academic research publications makes it difficult for researchers and students to efficiently identify relevant research literature.
 
-Traditional search systems mainly depend on matching the keywords entered by the user. This can make it difficult to find relevant information when a research paper uses different words or phrases with a similar meaning.
+Traditional keyword-based search may fail when different words or phrases express similar meanings. Researchers may also spend considerable time manually reviewing, filtering, and organizing research papers.
 
-Smart Hub Research aims to solve this problem by using semantic search techniques. Instead of searching only for exact keywords, the system focuses on the meaning and context of the user's query and retrieves information that is semantically relevant.
+SmartResearch Hub aims to address these challenges by combining semantic search with organized research-paper management.
+
+The proposed system will allow users to upload research papers, extract their text and metadata, generate semantic embeddings, and retrieve relevant papers using natural-language queries.
+
+---
 
 ## Problem Statement
 
-Researchers and students often spend a significant amount of time searching for relevant research papers and information. Conventional keyword-based search may not return the most relevant results when different words are used to express the same idea.
+Researchers and students often spend significant time searching for relevant research papers and information.
 
-Smart Hub Research aims to provide more meaningful and relevant search results by understanding the semantic meaning of the user's query.
+Traditional keyword-based search systems mainly depend on exact words entered by the user and may not identify research papers that use different terminology with similar meanings.
+
+Research papers are also distributed across different repositories, making organized knowledge management difficult.
+
+Therefore, SmartResearch Hub proposes a centralized semantic research repository that focuses on meaning-based retrieval and efficient research-paper management.
+
+---
 
 ## Objectives
 
-* To develop a semantic search system for research-related information.
-* To retrieve results based on the meaning of a user's query.
-* To reduce the time spent searching for relevant research material.
-* To improve the relevance of search results compared with traditional keyword-based searching.
-* To provide a useful search platform for students, researchers, teachers, and lecturers.
+- Develop a centralized repository for managing research papers.
+- Implement AI-powered semantic search for research-paper retrieval.
+- Store structured research-paper metadata using PostgreSQL.
+- Store research documents using MongoDB.
+- Store semantic vector embeddings using pgvector.
+- Develop REST APIs using FastAPI.
+- Support natural-language research queries.
+- Retrieve relevant research papers using semantic similarity.
+- Build a scalable and efficient backend architecture.
+- Improve research accessibility and knowledge sharing.
 
-## Technologies Used
+---
 
-*To be updated during the development phase.*
+## Proposed Technology Stack
 
-## Installation and Setup
+### Backend
+- Python
+- FastAPI
 
-*To be added after the technology stack and source code are finalized.*
+### Databases
+- PostgreSQL – structured metadata
+- MongoDB – research documents
+- pgvector – semantic vector embeddings and similarity search
 
-## How to Run the Project
+### Database / Backend Tools
+- SQLAlchemy
+- Postman
 
-*Instructions will be added after the implementation is completed.*
+### Development & Deployment
+- Git
+- GitHub
+- Docker
+- VS Code
 
-## Screenshots and Results
+---
 
-Screenshots and results will be added during the development and testing phases.
+## Proposed System Workflow
 
-## Project Status
-
-The project is currently in the initial review and planning phase. The implementation and coding phase has not yet started.
-
-## Team / Student Details
-
-*To be added.*
-
+```text
+User Registration / Login
+          ↓
+Upload Research Paper (PDF)
+          ↓
+Extract Text & Metadata
+          ↓
+Generate Semantic Embedding
+          ↓
+     ┌───────────────┬───────────────┐
+     ↓               ↓               ↓
+PostgreSQL        MongoDB         pgvector
+Metadata          Documents       Embeddings
+     └───────────────┴───────────────┘
+                     ↓
+             User Search Query
+                     ↓
+           Generate Query Embedding
+                     ↓
+          Semantic Similarity Search
+                     ↓
+             Relevance Ranking
+                     ↓
+          Display Relevant Papers
